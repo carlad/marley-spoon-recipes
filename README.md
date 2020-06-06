@@ -10,6 +10,8 @@ The app requires:
 - Ruby version 2.6.1
 - Git
 
+The app is deployed at [https://marley-spoon-recipes.herokuapp.com](https://marley-spoon-recipes.herokuapp.com)
+
 ### To run locally:
 
 Ensure you have the correct version ruby installed. You can check your ruby version by typing `ruby --version` in your terminal.
@@ -25,9 +27,9 @@ The `.env` file is ignored by git and not committed, to ensure no credentials ar
 
 ### To start the server: 
 
-`$ shotgun`
+`$ bundle exec puma`
 
-visit `localhost:9393`
+visit `localhost:9292`
 
 ### To run tests locally:
 `bundle exec rspec`

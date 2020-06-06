@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2 
-  heroku: circleci/heroku@1.0.1
 
 jobs:
   build:
@@ -15,7 +14,3 @@ jobs:
           command: gem install bundler:2.1.4
       - ruby/bundle-install
       - run: 'bundle exec rspec'
-  heroku_deploy:
-    jobs:
-      - heroku/deploy-via-git
-      - heroku/install
