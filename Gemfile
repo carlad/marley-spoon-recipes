@@ -7,6 +7,7 @@ gem 'rack-protection'
 gem 'rake'
 gem 'require_all'
 gem 'rspec'
+gem 'shotgun'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'slim'
@@ -20,7 +21,6 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'pry'
   gem 'rubocop'
-  gem 'shotgun'
 end
 
 group :test do
