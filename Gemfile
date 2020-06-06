@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'contentful'
+gem 'dotenv'
 gem 'puma'
 gem 'rack-protection'
 gem 'rake'
@@ -17,7 +18,6 @@ gem 'thin'
 
 group :development, :test do
   gem 'brakeman'
-  gem 'dotenv'
   gem 'guard'
   gem 'guard-rspec'
   gem 'pry'
