@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'contentful'
+gem 'puma'
 gem 'rack-protection'
 gem 'rake'
 gem 'require_all'
