@@ -1,0 +1,12 @@
+<h1>Marley Spoon Recipes</h1>
+
+<ol>
+  <% recipes.each do |recipe| %>
+  <li>
+    <a href="/recipes/<%= recipe.id %>">
+      <p><%= recipe.title %></p>
+      </a>
+      <img src="https:<%= recipe.photo.url(width: 300) %>" alt="recipe image">
+  </li>
+  <% end %>
+</ol>

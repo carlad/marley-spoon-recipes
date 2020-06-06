@@ -1,0 +1,11 @@
+<p><a href="/recipes">All Recipes</a></p>
+<h2><%= recipe.title %></h2>
+<img src="https:<%= recipe.url %>" alt="recipe image" width="400">
+<p>By <%= recipe.chef %></p>
+<h4>Directions</h4>
+<p><%= recipe.description %></p>
+<p> <% unless recipe.tags.empty? %>
+			<% recipe.tags.each do |tag| %>
+				<%= '#' + tag.name  %>
+			<% end %>  
+    <% end %> </p>
