@@ -40,5 +40,3 @@ It is recommended to use the configured pre-commit and pre-push hooks to check l
 
 You will need to install the hooks locally for them to take effect:
 `$ ./scripts/install-hooks.bash`
-
-TODO: fixture
