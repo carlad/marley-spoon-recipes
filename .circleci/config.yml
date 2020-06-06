@@ -14,3 +14,10 @@ jobs:
           command: gem install bundler:2.1.4
       - ruby/bundle-install
       - run: 'bundle exec rspec'
+  deploy:
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
