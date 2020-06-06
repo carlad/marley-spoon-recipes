@@ -27,14 +27,14 @@ The `.env` file is ignored by git and not committed, to ensure no credentials ar
 
 ### To start the server: 
 
-`$ bundle exec puma`
+`bundle exec puma`
 
-visit `localhost:9292`
+visit [localhost:9292](localhost:9292)
 
 ### To run tests locally:
 `bundle exec rspec`
 
-You can also use Guard to watch for any file changes and rerun relevant tests:
+You can also use Guard to watch for any file changes and rerun relevant tests automatically:
 `bundle exec guard`
 
 ### Pre-commit and pre-push hooks:
@@ -42,3 +42,8 @@ It is recommended to use the configured pre-commit and pre-push hooks to check l
 
 You will need to install the hooks locally for them to take effect:
 `$ ./scripts/install-hooks.bash`
+
+### Continuous Deployment
+The application uses [CircleCI](https://circleci.com) to run tests and deploy to [Heroku](https://heroku.com). 
+
+To run your own instance of the application using the same tools you will need to configure the CONTENTFUL_SPACE_ID and CONTENTFUL_ACCESS_TOKEN environment variables on both platforms, as well as the HEROKU_APP_NAME and your HEROKU_API_KEY on CircleCI. Refer to the [Heroku Docs](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard) and (CircleCI Docs)[https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project] for more information on how to do this.
