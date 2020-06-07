@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 describe 'recipes/index.erb' do
-  let(:recipes) do
-    VCR.use_cassette('recipes') { contentful.entries(content_type: 'recipe') }
-  end
+  let(:recipes) { contentful.entries(content_type: 'recipe') }
 
-  it 'displays all the recipes' do
+  it 'displays all the recipes', :vcr do
     get '/recipes'
     expect(last_response.body).to include(recipes.first.title.to_s)
     expect(last_response.body).to include(recipes.first.photo.url.to_s)

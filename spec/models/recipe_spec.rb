@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
 RSpec.describe Recipe, type: :model do
-  let(:contentful_recipe) do
-    VCR.use_cassette('recipe') { contentful.entries(content_type: 'recipe').first }
-  end
+  let(:contentful_recipe) { contentful.entries(content_type: 'recipe').first }
   let(:recipe) { Recipe.new(contentful_recipe) }
 
-  it 'has all fields' do
+  it 'has all expected fields', :vcr do
     expect(recipe.title).to eql('White Cheddar Grilled Cheese with Cherry Preserves & Basil')
     expect(recipe.url).to eql('//images.ctfassets.net/kk2bw5ojx476/61XHcqOBFYAYCGsKugoMYK/0009ec560684b37f7f7abadd66680179/SKU1240_hero-374f8cece3c71f5fcdc939039e00fb96.jpg')
     expect(recipe.description).to include('*Grilled Cheese 101*: Use delicious cheese and good quality bread; make crunchy on the outside and ooey gooey on the inside;')
