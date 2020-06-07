@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 describe 'recipes/index.erb' do
-  let(:recipes) { contentful.entries(content_type: 'recipe') }
+  let(:recipes) do
+    VCR.use_cassette('recipes') { contentful.entries(content_type: 'recipe') }
+  end
 
   it 'displays all the recipes' do
     get '/recipes'

@@ -6,7 +6,9 @@ require 'dotenv'
 Dotenv.load('.env')
 
 require_relative '../config/environment'
+require_relative '../vcr_setup'
 require 'rack/test'
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true

@@ -1,19 +1,21 @@
 # frozen_string_literal: true
 
 describe RecipesController do
-  let(:recipe) { contentful.entries(content_type: 'recipe').first }
-  let(:recipe_id) { recipe.id }
-  let(:recipe_title) { recipe.title }
+  before do
+    let(:recipe) do
+      VCR.use_cassette('recipe') { contentful.entries(content_type: 'recipe').first }
+    end
 
-  it 'loads recipes page' do
-    get '/recipes'
-    expect(last_response.status).to eq(200)
-    expect(last_response.body).to include('Marley Spoon Recipes')
-  end
+    it 'loads recipes page' do
+      get '/recipes'
+      expect(last_response.status).to eq(200)
+      expect(last_response.body).to include('Marley Spoon Recipes')
+    end
 
-  it 'loads recipe page' do
-    get "/recipes/#{recipe_id}"
-    expect(last_response.status).to eq(200)
-    expect(last_response.body).to include(recipe_title)
+    it 'loads recipe page' do
+      get "/recipe/#{recipe.id}"
+      expect(last_response.status).to eq(200)
+      expect(last_response.body).to include(recipe.title)
+    end
   end
 end

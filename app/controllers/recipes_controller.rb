@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   end
 
   # show route for one recipe
-  get '/recipes/:id' do
+  get '/recipe/:id' do
     recipe = Recipe.new(contentful.entry(params[:id]))
     erb :'/recipes/show', locals: { recipe: recipe }
   end

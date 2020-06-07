@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 RSpec.describe Recipe, type: :model do
-  let(:contentful_recipe) { contentful.entries(content_type: 'recipe').first }
-  let(:recipe_id) { contentful_recipe.id }
+  let(:contentful_recipe) do
+    VCR.use_cassette('recipe') { contentful.entries(content_type: 'recipe').first }
+  end
   let(:recipe) { Recipe.new(contentful_recipe) }
 
   it 'has all fields' do

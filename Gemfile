@@ -11,7 +11,6 @@ gem 'require_all'
 gem 'rspec'
 gem 'sinatra'
 gem 'sinatra-activerecord'
-gem 'slim'
 gem 'sysrandom'
 gem 'thin'
 
