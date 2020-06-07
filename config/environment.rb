@@ -3,7 +3,6 @@
 ENV['SINATRA_ENV'] ||= 'development'
 
 require 'bundler'
-require 'rdiscount'
 require 'sysrandom/securerandom'
 
 Bundler.require(:default, ENV['SINATRA_ENV'])

@@ -95,7 +95,6 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rdiscount (2.2.0.1)
     require_all (3.0.0)
     rexml (3.1.9)
     rspec (3.9.0)
@@ -166,7 +165,6 @@ DEPENDENCIES
   rack-protection
   rack-test
   rake
-  rdiscount
   require_all
   rspec
   rubocop

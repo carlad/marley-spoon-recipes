@@ -48,4 +48,6 @@ The application uses [CircleCI](https://circleci.com) to run tests and deploy to
 
 To run your own instance of the application using the same tools you will need to configure the CONTENTFUL_SPACE_ID and CONTENTFUL_ACCESS_TOKEN environment variables on both platforms, as well as the HEROKU_APP_NAME and your HEROKU_API_KEY on CircleCI. Refer to the [Heroku Docs](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard) and (CircleCI Docs)[https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project] for more information on how to do this.
 
+---
+
 TODO: parse md in views
