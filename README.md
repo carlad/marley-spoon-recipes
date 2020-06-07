@@ -1,10 +1,12 @@
 ## Marley Spoon Recipes
 
-Marley Spoon Recipes is a simple Sinatra application where users can see:
+Marley Spoon Recipes is a simple Sinatra application where users can see
 - a list of Marley Spoon recipes
 - detailed information about each recipe.
 
-The application is a view-only application which connects to Marley Spoon's Contentful CMS.
+The application is a view-only application which connects to Marley Spoon's Contentful CMS via the Contentful Content Delivery API.
+
+Views have been implemented without styling as no UI specification has been provided as of yet.
 
 The app requires:
 - Ruby version 2.6.1
@@ -12,33 +14,36 @@ The app requires:
 
 The app is deployed at [https://marley-spoon-recipes.herokuapp.com](https://marley-spoon-recipes.herokuapp.com)
 
-### To run locally:
+### Installing Ruby:
 
-Ensure you have the correct version ruby installed. You can check your ruby version by typing `ruby --version` in your terminal.
+Ensure you have the correct version of ruby installed. You can check your ruby version by typing `ruby --version` in your terminal.
 
-Instructions for how to do this depend on your development environment and the tool you use to manage your ruby installations. Please see the [Ruby documentation website](https://www.ruby-lang.org/en/documentation/installation/) for detailed installation instructions.
+Instructions for how to install Ruby will depend on your development environment and the tool you use to manage your ruby installations. Please see the [Ruby documentation website](https://www.ruby-lang.org/en/documentation/installation/) for detailed installation instructions.
 
-After cloning the repository navigate into the project directory `cd marley-recipes` and run `bundle install`.
+### SetUp
+
+Clone the repositoty: `git clone git@github.com:carlad/marley-spoon-recipes.git`
+
+After cloning the repository navigate into the project directory `cd marley-spoon-recipes` and run `bundle install`.
 
 You will need to create a `.env` file in the root directory with values set for the CONTENTFUL_SPACE_ID and 
 CONTENTFUL_ACCESS_TOKEN environment variables. Copy the `.env_example` file and add the credentials found [here](https://gist.github.com/lawitschka/063f2e28bd6993cac5f8b40b991ae899#credentials).
 
-The `.env` file is ignored by git and not committed, to ensure no credentials are leaked.
+(The `.env` file is ignored by git and not committed, to ensure no credentials are leaked - see the `.gitignore` file).
 
-### To start the server: 
+### To run the app locally:
 
-`bundle exec puma`
-
-visit [localhost:9292](localhost:9292)
+Run `bundle exec puma` then visit [localhost:9292](localhost:9292)
 
 ### To run tests locally:
-`bundle exec rspec`
 
-You can also use Guard to watch for any file changes and rerun relevant tests automatically:
+Run `bundle exec rspec`
+
+You can also use Guard to watch for any file changes and rerun relevant tests automatically.
 `bundle exec guard`
 
 ### Pre-commit and pre-push hooks:
-It is recommended to use the configured pre-commit and pre-push hooks to check linting, security, and ensure tests are run before pushing.
+It is recommended to use the configured pre-commit and pre-push hooks to check linting, security, and ensure tests pass before pushing.
 
 You will need to install the hooks locally for them to take effect:
 `$ ./scripts/install-hooks.bash`
@@ -50,4 +55,4 @@ To run your own instance of the application using the same tools you will need t
 
 ---
 
-TODO: parse md in views
+TODO: Parse markdown content in views
