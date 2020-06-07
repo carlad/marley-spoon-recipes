@@ -3,7 +3,7 @@
 <ol>
   <% recipes.each do |recipe| %>
   <li>
-    <a href="/recipes/<%= recipe.id %>">
+    <a href="/recipe/<%= recipe.id %>">
       <p><%= recipe.title %></p>
       </a>
       <img src="https:<%= recipe.photo.url(width: 300) %>" alt="recipe image">

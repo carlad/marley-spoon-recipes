@@ -7,7 +7,6 @@ describe 'recipes/index.erb' do
 
   it 'displays all the recipes' do
     get '/recipes'
-
     expect(last_response.body).to include(recipes.first.title.to_s)
     expect(last_response.body).to include(recipes.first.photo.url.to_s)
     expect(last_response.body).to include(recipes.last.title.to_s)
