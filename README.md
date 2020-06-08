@@ -33,13 +33,13 @@ CONTENTFUL_ACCESS_TOKEN environment variables. Copy the `.env_example` file and 
 
 ### To run the app locally:
 
-Run `bundle exec puma` then visit [localhost:9292](localhost:9292)
+Run `bundle exec puma` then visit [localhost:9292](http://localhost:9292)
 
 ### To run tests locally:
 
 Run `bundle exec rspec`
 
-You can also use Guard to watch for any file changes and rerun relevant tests automatically.
+You can also use Guard to watch for any file changes and rerun relevant tests automatically: 
 `bundle exec guard`
 
 ### Pre-commit and pre-push hooks:
