@@ -10,7 +10,6 @@ gem 'rake'
 gem 'require_all'
 gem 'rspec'
 gem 'sinatra'
-gem 'sinatra-activerecord'
 gem 'sysrandom'
 gem 'thin'
 
