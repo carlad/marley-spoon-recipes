@@ -33,13 +33,13 @@ CONTENTFUL_ACCESS_TOKEN environment variables. Copy the `.env_example` file and 
 
 ### To run the app locally:
 
-Run `bundle exec puma` then visit [localhost:9292](localhost:9292)
+Run `bundle exec puma` then visit [localhost:9292](http://localhost:9292)
 
 ### To run tests locally:
 
 Run `bundle exec rspec`
 
-You can also use Guard to watch for any file changes and rerun relevant tests automatically.
+You can also use Guard to watch for any file changes and rerun relevant tests automatically: 
 `bundle exec guard`
 
 ### Pre-commit and pre-push hooks:
@@ -51,7 +51,7 @@ You will need to install the hooks locally for them to take effect:
 ### Continuous Deployment
 The application uses [CircleCI](https://circleci.com) to run tests and deploy to [Heroku](https://heroku.com). 
 
-To run your own instance of the application using the same tools you will need to configure the CONTENTFUL_SPACE_ID and CONTENTFUL_ACCESS_TOKEN environment variables on both platforms, as well as the HEROKU_APP_NAME and your HEROKU_API_KEY on CircleCI. Refer to the [Heroku Docs](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard) and (CircleCI Docs)[https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project] for more information on how to do this.
+To run your own instance of the application using the same tools you will need to configure the CONTENTFUL_SPACE_ID and CONTENTFUL_ACCESS_TOKEN environment variables on both platforms, as well as the HEROKU_APP_NAME and your HEROKU_API_KEY on CircleCI. Refer to the [Heroku Docs](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard) and [CircleCI Docs](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project) for more information on how to do this.
 
 ---
 
